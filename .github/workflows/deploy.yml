@@ -23,6 +23,7 @@ jobs:
           target: "/var/www/aaronseodev"
 
       - name: Executing remote command
+        uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USER }}
