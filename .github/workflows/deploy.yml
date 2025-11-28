@@ -23,5 +23,6 @@ jobs:
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_SSH_KEY }}
           script: |
-            rsync -av --delete ./ /var/www/aaronseo.dev/
+            ls
+            rsync -av --delete ./aaronseodev/ /var/www/aaronseo.dev/
 
