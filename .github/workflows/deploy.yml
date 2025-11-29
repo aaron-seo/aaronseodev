@@ -10,7 +10,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     env:
-      VPS_TARGET_DIR: ${{ github.ref_name == 'main' && '/var/www/aaronseodev' || github.ref_name == 'stage' && '/var/www/stage.aaronseodev' }}
+      VPS_TARGET_DIR: ${{ github.ref_name == 'main' && '/var/www/aaronseo.dev' || github.ref_name == 'stage' && '/var/www/stage.aaronseo.dev' }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v6
