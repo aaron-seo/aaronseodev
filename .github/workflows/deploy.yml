@@ -9,6 +9,8 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      VPS_TARGET_DIR: ${{ github.ref_name == 'main' && '/var/www/aaronseodev' || github.ref_name == 'stage' && '/var/www/stage.aaronseodev' }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v6
@@ -23,7 +25,7 @@ jobs:
           port: ${{ secrets.VPS_PORT }}
           key: ${{ secrets.VPS_SSH_KEY }}
           source: "./page/"
-          target: ${{ secrets.VPC_TARGET }}
+          target: ${{ env.VPC_TARGET_DIR }}
 
       - name: Executing remote command
         uses: appleboy/ssh-action@master
