@@ -1,3 +1,3 @@
 # aaronseodev
 
-A repo for my static page aaronseo.dev
+A repo for my static page aaronseo.dev.
